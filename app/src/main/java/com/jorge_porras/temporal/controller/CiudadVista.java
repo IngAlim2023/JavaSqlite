@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.jorge_porras.temporal.R;
+import com.jorge_porras.temporal.models.Ciudades;
 import com.jorge_porras.temporal.models.ManagerDb;
 
 public class CiudadVista extends AppCompatActivity {
@@ -36,7 +37,9 @@ public class CiudadVista extends AppCompatActivity {
         addCiu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                long result = managerDb.insertData(txtNomCiudad.getText().toString());
+                Ciudades nciudad = new Ciudades(txtNomCiudad.getText().toString());
+                long result = managerDb.insertData(nciudad);
+
                 if(result>0){
                     Toast.makeText(CiudadVista.this, "Datos insertados" + result, Toast.LENGTH_SHORT).show();
                 }

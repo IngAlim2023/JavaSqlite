@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.jorge_porras.temporal.R;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnCiudadM;
+    Button btnCiudadM, btnBarriosM, btnDatosM;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,12 +16,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // Intents
         btnCiudadM = findViewById(R.id.btnCiudad);
+        btnBarriosM = findViewById(R.id.btnBarrios);
+        btnDatosM = findViewById(R.id.btnDatos);
 
         btnCiudadM.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent irCiudad = new Intent(MainActivity.this, CiudadVista.class);
                 startActivity(irCiudad);
+            }
+        });
+        btnBarriosM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent irBarrios = new Intent(MainActivity.this, DatosVista.class);
+                startActivity(irBarrios);
             }
         });
     }

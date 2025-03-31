@@ -21,12 +21,12 @@ public class ManagerDb {
     public  void openDbRd(){
         db = bdHelper.getReadableDatabase();
     }
-    public long insertData( String nombre){
+    public long insertData(Ciudades ciudades){
         openDbWrite();
 
         ContentValues valores = new ContentValues();
 
-        valores.put("nombre", nombre);
+        valores.put("nombre", ciudades.getNombre());
 
         long result = db.insert("Ciudad", null, valores);
         return  result;
