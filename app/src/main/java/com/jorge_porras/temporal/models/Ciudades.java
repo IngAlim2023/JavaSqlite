@@ -1,12 +1,18 @@
 package com.jorge_porras.temporal.models;
 
-import android.content.Intent;
 
 public class Ciudades {
     public int cod;
     public String nombre;
 
+    public Ciudades() {
+    }
+
     public Ciudades(String nombre) {
+        this.nombre = nombre;
+    }
+    public Ciudades(int cod, String nombre) {
+        this.cod = cod;
         this.nombre = nombre;
     }
 

@@ -33,5 +33,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(irBarrios);
             }
         });
+        btnDatosM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent irDatos = new Intent(MainActivity.this, DatosVista.class);
+                startActivity(irDatos);
+            }
+        });
     }
 }

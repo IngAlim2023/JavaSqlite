@@ -11,16 +11,18 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.jorge_porras.temporal.R;
+import com.jorge_porras.temporal.models.BdHelper;
 import com.jorge_porras.temporal.models.Ciudades;
 import com.jorge_porras.temporal.models.ManagerDb;
 
 public class CiudadVista extends AppCompatActivity {
     SQLiteDatabase db;
-
+    BdHelper bdHelper;
     //Agregar:
     EditText  txtNomCiudad;
     Button addCiu, irDatos;
     ManagerDb managerDb;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +30,7 @@ public class CiudadVista extends AppCompatActivity {
         //Botones
         addCiu = findViewById(R.id.addCiudad);
         irDatos = findViewById(R.id.irDatos);
-
+        // para la actualizacion de la base de datos habilitarlo : db = bdHelper.getWritableDatabase();
         //TextInputs
         txtNomCiudad = findViewById(R.id.textNombreCiudad);
 
